@@ -114,11 +114,6 @@ def main():
     metrics_df = pd.DataFrame(results_list).set_index("Algorithm")
 
     # --- Prepare Data for Display ---
-    st.info("""
-    **Note on K-Means:** You listed K-Means, which is an **unsupervised clustering** algorithm. Its purpose is to group data without predefined labels. 
-    Since this task is about predicting a specific label ('Addicted' vs. 'Not Addicted'), it is a **supervised classification** problem. Therefore, K-Means is not applicable here and has been excluded from the comparison.
-    """)
-
     qualitative_data = {
         'Algorithm': list(models.keys()),
         'Bias–Variance': ['Low Bias, High Variance', 'High Bias, Low Variance', 'Low Bias, High Variance', 'Tunable (Low Bias, High Var w/ complex kernels)', 'Low Bias, High Variance', 'Low Bias, Medium Variance'],
